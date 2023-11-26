@@ -9,9 +9,12 @@ body.insertAdjacentHTML(
   'beforeEnd',
   `<h2 class="text"> Код кольору в системі Hex:  <span ></span></h2>`
 );
-const text = document.querySelector('.text')
-text.style.textAlign = "left"
-text.style.marginLeft = "39%"
+const text = document.querySelector('.text');
+text.style.textAlign = 'left';
+text.style.marginLeft = '39%';
+body.style.display = 'flex';
+body.style.flexDirection = 'column';
+
 let temp;
 
 function startEpilepcy() {

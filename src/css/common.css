@@ -10,9 +10,7 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
-  display: flex;
-  flex-direction: column;
-}
+ }
 
 img {
   display: block;
@@ -25,7 +23,7 @@ button {
 }
 
 .timer {
-  display: block;
+  display: flex;
   padding: 15px 0;
 }
 
