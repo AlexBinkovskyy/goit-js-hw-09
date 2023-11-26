@@ -7,9 +7,11 @@ stopBtn.setAttribute('disabled', 'true');
 
 body.insertAdjacentHTML(
   'beforeEnd',
-  `<h2> Код кольору в <br> системі Hex:  <span ></span></h2>`
+  `<h2 class="text"> Код кольору в системі Hex:  <span ></span></h2>`
 );
-
+const text = document.querySelector('.text')
+text.style.textAlign = "left"
+text.style.marginLeft = "39%"
 let temp;
 
 function startEpilepcy() {
@@ -22,7 +24,7 @@ function startEpilepcy() {
   temp = idInt;
   currentColor = getRandomHexColor();
   body.style.backgroundColor = currentColor;
-  body.lastElementChild.lastChild.textContent = ` ${currentColor}`;
+  text.lastChild.textContent = ` ${currentColor}`;
   startBtn.toggleAttribute('disabled');
   stopBtn.toggleAttribute('disabled');
 }

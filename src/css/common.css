@@ -10,6 +10,8 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
+  display: flex;
+  flex-direction: column;
 }
 
 img {
@@ -17,8 +19,13 @@ img {
   max-width: 100%;
 }
 
+button {
+  width: 100px;
+  margin: 5px auto;
+}
+
 .timer {
-  display: flex;
+  display: block;
   padding: 15px 0;
 }
 
@@ -45,3 +52,4 @@ img {
   background-color: rgb(68, 65, 65);
   color: #fafafa;
 }
+
