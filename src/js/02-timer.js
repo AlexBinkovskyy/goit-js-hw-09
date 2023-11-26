@@ -59,11 +59,6 @@ function createLayout(checkedDate) {
   }
 }
 
-// function addLeadingZero(value){
-//     padStart(2, 0)
-//     return value
-// }
-
 function convertMs(ms) {
   const second = 1000;
   const minute = second * 60;
