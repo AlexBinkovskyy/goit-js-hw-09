@@ -1,5 +1,6 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
+import Notiflix from 'notiflix';
 
 const inputField = document.querySelector('#datetime-picker');
 let startBtn = document.querySelector('[data-start]');
@@ -12,6 +13,7 @@ startBtn.disabled = true;
 
 function onClick() {
   const checkedDate = JSON.parse(localStorage.getItem('checkedDate'));
+  Notiflix.Notify.success('The countdown has started successfully');
   startCountdown(checkedDate);
 }
 
@@ -32,7 +34,8 @@ function checkDate(selectedDates) {
   const date = new Date().getTime();
   selectedDates.getTime() > date
     ? (startBtn.disabled = false)
-    : ((startBtn.disabled = true), alert('Please choose a date in the future'));
+    : ((startBtn.disabled = true),
+      Notiflix.Notify.warning('Please choose a date in the future'));
   return selectedDates;
 }
 
@@ -52,8 +55,12 @@ function createLayout(checkedDate) {
     const remainTime = convertMs(result);
     daysRemain.textContent = `${remainTime.days.toString().padStart(2, '0')}`;
     hoursRemain.textContent = `${remainTime.hours.toString().padStart(2, '0')}`;
-    minutesRemain.textContent = `${remainTime.minutes.toString().padStart(2, '0')}`;
-    secondsRemain.textContent = `${remainTime.seconds.toString().padStart(2, '0')}`;
+    minutesRemain.textContent = `${remainTime.minutes
+      .toString()
+      .padStart(2, '0')}`;
+    secondsRemain.textContent = `${remainTime.seconds
+      .toString()
+      .padStart(2, '0')}`;
   } else {
     return;
   }
@@ -72,3 +79,4 @@ function convertMs(ms) {
 
   return { days, hours, minutes, seconds };
 }
+
