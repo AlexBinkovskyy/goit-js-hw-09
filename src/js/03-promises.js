@@ -26,7 +26,7 @@ function onSubmit(event) {
       })
       .catch(({ position, delay }) => {
         Notiflix.Notify.failure(
-          `❌ Fullfilled promise ${position} in ${delay}ms.`
+          `❌ Rejected promise ${position} in ${delay}ms.`
         );
       });
       currentDelay +=delayStep;
